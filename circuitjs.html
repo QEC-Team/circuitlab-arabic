@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b2b3a">
+  <meta name="description" content="محاكي CircuitJS1 معرّب بالكامل ضمن مشروع مختبر الدوائر العربي.">
+  <title>المحاكي العربي | مختبر الدوائر</title>
+  <style>
+    :root { color-scheme: light; --ink:#102b44; --teal:#047c7a; --line:#d7e6eb; --paper:#f4f8fa; }
+    * { box-sizing:border-box; }
+    html { -webkit-text-size-adjust:100%; background:var(--paper); }
+    body { margin:0; min-height:100dvh; color:var(--ink); background:var(--paper); font-family:Tahoma,Arial,"Segoe UI",sans-serif; }
+    .lab-header { min-height:62px; padding:10px max(14px,env(safe-area-inset-right)) 10px max(14px,env(safe-area-inset-left)); display:flex; align-items:center; justify-content:space-between; gap:12px; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 2px 12px rgba(10,38,55,.05); }
+    .lab-brand { display:flex; align-items:center; gap:10px; min-width:0; text-decoration:none; color:inherit; }
+    .lab-mark { width:36px; height:36px; border-radius:11px; display:grid; place-items:center; flex:0 0 auto; color:#96eee0; background:#103247; }
+    .lab-brand b { display:block; font-size:15px; white-space:nowrap; }
+    .lab-brand small { display:block; margin-top:2px; color:#667d8b; font:600 11px/1.2 system-ui,sans-serif; direction:ltr; text-align:right; }
+    .lab-actions { display:flex; align-items:center; gap:8px; flex:0 0 auto; }
+    .lab-link { min-height:38px; display:inline-flex; align-items:center; justify-content:center; padding:8px 11px; border-radius:10px; border:1px solid var(--line); color:#194456; background:#fff; font-size:12px; font-weight:700; text-decoration:none; white-space:nowrap; }
+    .lab-link.language { background:#e6f6f3; border-color:#b8e4dc; color:#06645f; }
+    .lab-link:focus-visible, button:focus-visible, input:focus-visible { outline:3px solid #f2aa5b; outline-offset:2px; }
+    .sim-note { padding:8px 16px; background:#eaf7f5; color:#245e61; border-bottom:1px solid #cde9e5; font-size:12px; line-height:1.6; }
+    .sim-note strong { font-weight:800; }
+    /* تُترجم النصوص RTL، لكن يبقى الرسم والإحداثيات والقيم الهندسية LTR. */
+    .gwt-MenuBar, .gwt-MenuBarPopup, .gwt-PopupPanel, .gwt-DialogBox, .gwt-Label, .gwt-Button, .gwt-CheckBox, .gwt-RadioButton { direction:rtl; }
+    .gwt-MenuBar, .gwt-MenuBarPopup, .gwt-DialogBox, .gwt-PopupPanel { font-family:Tahoma,Arial,"Segoe UI",sans-serif; }
+    .gwt-MenuBarPopup .gwt-MenuItem, .gwt-DialogBox .Caption, .gwt-DialogBox td, .gwt-PopupPanel { text-align:right; }
+    .gwt-MenuItem { min-height:25px; white-space:normal; line-height:1.45; }
+    .gwt-TextBox, .gwt-TextArea, input[type="number"], input[type="text"] { direction:ltr; text-align:left; unicode-bidi:plaintext; }
+    canvas { direction:ltr !important; unicode-bidi:normal; touch-action:none; }
+    .gwt-Button { min-height:30px; }
+    @media (max-width:620px) {
+      .lab-header { min-height:54px; padding-top:8px; padding-bottom:8px; }
+      .lab-mark { width:32px; height:32px; border-radius:10px; }
+      .lab-brand b { font-size:13px; }
+      .lab-brand small { display:none; }
+      .lab-link { min-height:34px; padding:7px 9px; font-size:11px; }
+      .sim-note { padding:7px 12px; font-size:11px; }
+      .gwt-MenuBar-horizontal { font-size:11px !important; overflow-x:auto; max-width:100vw; white-space:nowrap; }
+      .gwt-MenuBarPopup { max-width:min(92vw,390px); }
+    }
+  </style>
+  <link rel="stylesheet" href="font/fontello.css">
+</head>
+<body>
+  <header class="lab-header">
+    <a class="lab-brand" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">
+      <span class="lab-mark" aria-hidden="true"><svg viewBox="0 0 40 40" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M3 20h9m16 0h9M12 20h4v-7l9 14v-7h3"/><circle cx="3" cy="20" r="1.7" fill="currentColor"/><circle cx="37" cy="20" r="1.7" fill="currentColor"/></svg></span>
+      <span><b>مختبر الدوائر العربي</b><small>CircuitJS1 · Arabic Edition</small></span>
+    </a>
+    <nav class="lab-actions" aria-label="إجراءات المحاكي">
+      <a class="lab-link language" href="circuitjs.html?lang=en" lang="en" dir="ltr">English</a>
+      <a class="lab-link" href="index.html">الرئيسية</a>
+    </nav>
+  </header>
+  <div class="sim-note"><strong>ملاحظة:</strong> القوائم والرسائل العربية مفعّلة. تبقى رموز الدائرة واتجاهات الأطراف والمحاور بصيغتها الهندسية القياسية.</div>
+
+  <script src="lz-string.min.js"></script>
+  <script src="circuitjs110/circuitjs1.nocache.js"></script>
+  <iframe src="javascript:''" id="__gwt_historyFrame" title="سجل التنقل" style="width:0;height:0;border:0"></iframe>
+</body>
+</html>
