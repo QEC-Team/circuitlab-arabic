@@ -20,15 +20,27 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
+      - name: Arrange uploaded files
+        run: |
+          mkdir -p assets scripts
+          cp index.html circuitjs.html iframe.html locale_ar.txt assets/
+          cp build_site.sh validate.py scripts/
+
       - name: Build CircuitLab Arabic
         run: bash scripts/build_site.sh
+
       - name: Validate the build
         run: python3 scripts/validate.py
+
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
       - id: deployment
         uses: actions/deploy-pages@v4
